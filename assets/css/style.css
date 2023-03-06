@@ -446,9 +446,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h2 {
-  color: #484848;
+  color: white;
   margin-bottom: 50px;
-  font-size: 24px;
+  font-size: 34px;
+  font-family: cursive;
+  /* font-weight: 300; */
 }
 
 #hero .btn-get-started {
@@ -1674,3 +1676,8 @@ section {
 #footer .footer-links a:hover {
   color: #3498db;
 }
+
+
+
+
+
