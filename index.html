@@ -132,42 +132,23 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center" style="background-color:white;height: 100vh;">
+   
     <div id="myCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-inner h-100 w-100">
         <div class="carousel-item active h-100">
           <img src="assets/img/retire.jpeg" class="d-block w-100 h-100" alt="First slide">
-          <!-- <div class="carousel-caption">
-            <h1>First slide heading</h1>
-            <p>First slide caption</p>
-          </div> -->
         </div>
-        <div class="carousel-item h-100">
+        <div class="carousel-item h-100 d-none d-sm-block">
           <img src="assets/img/childfuture.jpeg" class="d-block w-100 h-100" alt="Second slide">
-          <!-- <div class="carousel-caption">
-            <h1>Second slide heading</h1>
-            <p>Second slide caption</p>
-          </div> -->
         </div>
         <div class="carousel-item h-100">
           <img src="assets/img/waelth-building.jpeg" class="d-block w-100 h-100" alt="Third slide">
-          <!-- <div class="carousel-caption">
-            <h1>Third slide heading</h1>
-            <p>Third slide caption</p>
-          </div> -->
         </div>
         <div class="carousel-item h-100">
           <img src="assets/img/house.jpeg" class="d-block w-100 h-100" alt="Third slide">
-          <!-- <div class="carousel-caption">
-            <h1>Third slide heading</h1>
-            <p>Third slide caption</p>
-          </div> -->
         </div>
         <div class="carousel-item h-100">
           <img src="assets/img/banner1.jpg" class="d-block w-100 h-100" alt="Third slide">
-          <!-- <div class="carousel-caption">
-            <h1>Third slide heading</h1>
-            <p>Third slide caption</p>
-          </div> -->
         </div>
       </div>
       <button class="opacity carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -962,14 +943,14 @@
   </div>
 
 
-  <div class="offer-popup">
+  <!-- <div class="offer-popup">
     <div class="offer-popup-content">
       <p style="border: none;">      
         <img style="width: 70%;" src="assets/img/gold.jpeg" alt="" >
       </p>
       <button class="close-btn">Close</button>
     </div>
-  </div>
+  </div> -->
   
   
   <!-- ======= Footer ======= -->
@@ -1016,18 +997,18 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-    const firstInterval= setInterval(function() {
-    $('.offer-popup').fadeIn();
-  }, 10000);
+  //   const firstInterval= setInterval(function() {
+  //   $('.offer-popup').fadeIn();
+  // }, 10000);
 
-  const secondinterval=setInterval(() => {
-    $('.offer-popup').fadeOut();
-  },15000);
+  // const secondinterval=setInterval(() => {
+  //   $('.offer-popup').fadeOut();
+  // },15000);
 
-  setInterval(() => {
-    clearInterval(firstInterval)
-    clearInterval(secondinterval)
-  }, 30000);
+  // setInterval(() => {
+  //   clearInterval(firstInterval)
+  //   clearInterval(secondinterval)
+  // }, 30000);
 //     $(document).ready(function() {
 //   var randomTime = Math.floor(Math.random() * 10000) + 5000;
 //   setInterval(function() {
