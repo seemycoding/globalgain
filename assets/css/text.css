@@ -167,6 +167,46 @@ opacity: 0;
     padding: 5px 10px;
     font-weight: bold;
   }
+
+  .font-weight-bold{
+    font-weight: 800;
+  }
+
+  .bg-redv{
+    background-color:#f8615a;
+  }
+  .bg-blue{
+    background-color:#5abee8;
+  }
+  .bg-yellow{
+    background-color:#efbd49;
+  }
+  .bg-orange{
+    background-color:#ff6c23;
+  }
+  .bg-green{
+    background-color:#95bb04;
+  }
+
+  .bg-red{
+    background-color:#e30a12;
+  }
+  .bg-purple{
+    background-color:#be4bdb;
+  }
+
+  .bg-custom{
+    color: white;
+   
+    padding: 30px;
+    font-size: larger;
+
+  }
+
+  .bg-text{
+    border: none;
+    text-align: justify;
+  }
   
    
   

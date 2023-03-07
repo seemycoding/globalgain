@@ -62,14 +62,17 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
+/* .flip-card-front {
+  color: white;
+  background-color:#f8615a;
+} */
+
+
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: #424242;
   color: white;
+  font-weight: 800;
   transform: rotateY(180deg);
 }
 
