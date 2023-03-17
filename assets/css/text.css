@@ -205,7 +205,7 @@ opacity: 0;
 
   .bg-text{
     border: none;
-    text-align: justify;
+    text-align: start;
   }
 
   .list-unstyled li::before {
@@ -231,5 +231,5 @@ opacity: 0;
     color: green !important;
   }
   
-   
+ 
   
