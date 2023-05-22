@@ -136,8 +136,8 @@
     let body=`${name} from ${subject} had contacted you from your website kindly revert them at ${from} or call them at ${mobile} Message :- ${message}`;
     Email.send({
       Host: "email-smtp.ap-south-1.amazonaws.com",
-      Username: "AKIAT6S7GXW7EWNC2G6F",
-      Password: "BClRAERhEsgPYvywzLeAEk/lM8a7LPxrickZlpHsmj2R",
+      Username: "",
+      Password: "",
       To: "dmrpvt2000@gmail.com",
       From: "dmrpvt2000@gmail.com",
       Subject: "New Contact From Website",
