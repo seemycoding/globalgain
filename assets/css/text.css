@@ -1,12 +1,10 @@
-/*body{
+/* body{
   display:flex;
   justify-content: center;
   align-items: center;
   width:100%;
   height:100vh;
 } */
-
-
 .viewport{
   display:flex;
   align-items: center;
@@ -15,7 +13,6 @@
   height: 100%;
   overflow: hidden;
 }
-
 .dots{
   position:absolute;
   width: 45px;
@@ -25,7 +22,6 @@
   align-items: center;
   box-sizing: border-box;
 }
-
 .dots-item{
   position:relative;
   z-index:2;
@@ -36,15 +32,12 @@
   background: black;
   cursor:pointer;
 }
-
 .dots-item:hover{
     background:white;
 }
-
 .dots-item.active{
   background: blue;
 }
-
 .slider{
   display: flex;
   flex-direction: column;
@@ -54,7 +47,6 @@
   transition: transform .5s ease-in-out;
   will-change:transform;
 }
-
 .slider-item{
   width: 100%;
   min-height: 100vh;
@@ -71,13 +63,11 @@
   left: 0;
 background-image:url("../img/slide1.jpg")
 }
-
 .fluid{
   max-width: 100%;
   width: 100%;
   height: 100vh;
 }
-
 h1{
   color: white;
   font-size: 3rem;
@@ -145,11 +135,13 @@ opacity: 0;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   }
 
+  
   .offer-popup {
     display: none;
     position: fixed;
     top: 50%;
     border: none;
+
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
@@ -177,55 +169,52 @@ opacity: 0;
   }
 
   .font-weight-bold{
-    font-weight: 1000;
+    font-weight: 800;
   }
 
   .bg-redv{
-    background-color:#c40a00;
+    background-color:#f8615a;
   }
-
   .bg-blue{
     background-color:#5abee8;
   }
-
   .bg-yellow{
-    background-color:#eca500;
+    background-color:#efbd49;
   }
-
   .bg-orange{
-    background-color:#e04b00;
+    background-color:#ff6c23;
   }
-
   .bg-green{
-    background-color:#ccff00;
+    background-color:#95bb04;
   }
 
   .bg-red{
-    background-color:#eb0008;
+    background-color:#e30a12;
   }
   .bg-purple{
-    background-color:#9700bd;
+    background-color:#be4bdb;
   }
 
   .bg-custom{
-    color: rgb(0, 0, 0);
-    text-align: justify;
+    color: white;
+   
     padding: 30px;
     font-size: larger;
+
   }
 
   .bg-text{
     border: none;
-    text-align: justify;
+    text-align: start;
   }
 
   .list-unstyled li::before {
-    /* content: "\f00c";  FontAwesome checkmark icon */
+    content: "\f00c"; /* FontAwesome checkmark icon */
     display: inline-block;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 16px;
-    color: #007440;
+    color: #41B883;
     margin-right: 10px;
   }
 
