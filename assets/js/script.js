@@ -333,12 +333,12 @@ function createRow(item) {
         : `<input type="number" data-input="${item.key}" min="0" value="0" placeholder="Enter value" />`;
 
   row.innerHTML = `
-    <td>${item.label}</td>
-    <td>${formulaCell}</td>
-    <td data-target="${item.key}">-</td>
-    <td>${currentInput}</td>
-    <td data-gap="${item.key}">-</td>
-    <td><span class="pill neutral" data-score="${item.key}">-</span></td>
+    <td data-label="Checklist Item">${item.label}</td>
+    <td data-label="Formula / Rule">${formulaCell}</td>
+    <td data-label="Target" data-target="${item.key}">-</td>
+    <td data-label="Current Status / Input">${currentInput}</td>
+    <td data-label="Gap" data-gap="${item.key}">-</td>
+    <td data-label="Score"><span class="pill neutral" data-score="${item.key}">-</span></td>
   `;
   checklistBody.appendChild(row);
 }
@@ -467,7 +467,7 @@ function computeChecklist() {
 
     targetEl.textContent = targetText;
     gapEl.textContent = gapText;
-    scoreEl.textContent = `${score}/5`;
+    scoreEl.textContent = `${score}`;
     scoreEl.className = `pill ${scoreClass(score)}`;
 
     return {
@@ -581,12 +581,12 @@ function renderAnalysisTable(results) {
   results.forEach((r) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.label}</td>
-      <td>${r.targetText}</td>
-      <td>${r.currentText}</td>
-      <td>${r.gapText}</td>
-      <td><span class="pill ${scoreClass(r.score)}">${r.score}/5</span></td>
-      <td>${r.status}</td>
+      <td data-label="Item">${r.label}</td>
+      <td data-label="Target">${r.targetText}</td>
+      <td data-label="Current">${r.currentText}</td>
+      <td data-label="Gap">${r.gapText}</td>
+      <td data-label="Score"><span class="pill ${scoreClass(r.score)}">${r.score}</span></td>
+      <td data-label="Status">${r.status}</td>
     `;
     analysisBody.appendChild(tr);
   });
@@ -664,7 +664,7 @@ function drawRadarChart(results) {
       x,
       y,
       r: 8,
-      text: `${item.category}: ${item.avg.toFixed(1)}/5`,
+      text: `${item.category}: ${item.avg.toFixed(1)}`,
     });
   });
   ctx.closePath();
@@ -705,13 +705,13 @@ function drawScoreBars(results) {
     ctx.fillStyle = "#53aee0";
     ctx.fillRect(left, y, barWidth, 12);
     ctx.fillStyle = "#334155";
-    ctx.fillText(`${item.score}/5`, left + barWidth + 6, y + 10);
+    ctx.fillText(`${item.score}`, left + barWidth + 6, y + 10);
     chartHitAreas.scores.push({
       x: left,
       y,
       w: Math.max(barWidth, 6),
       h: 12,
-      text: `${item.label}: ${item.score}/5`,
+      text: `${item.label}: ${item.score}`,
     });
   });
 }

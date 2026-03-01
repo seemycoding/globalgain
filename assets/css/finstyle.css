@@ -189,7 +189,7 @@ input[readonly] {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 860px;
+  min-width: 760px;
 }
 
 thead th {
@@ -663,6 +663,62 @@ button:hover {
   }
   .modal-grid {
     grid-template-columns: 1fr;
+  }
+  .table-wrap {
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+  }
+  table {
+    min-width: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  table thead {
+    display: none;
+  }
+  table,
+  table tbody,
+  table tr,
+  table td {
+    display: block;
+    width: 100%;
+  }
+  table tr {
+    margin-bottom: 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+  }
+  table td {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 1px dashed #e2e8f0;
+    padding: 10px 12px;
+    text-align: right;
+  }
+  table td:last-child {
+    border-bottom: none;
+  }
+  table td::before {
+    content: attr(data-label);
+    color: #475569;
+    font-weight: 700;
+    text-align: left;
+    min-width: 42%;
+  }
+  table td .pill {
+    margin-left: auto;
+  }
+  table td input,
+  table td select,
+  table td .allocation-summary,
+  table td .formula-with-btn {
+    width: min(58%, 220px);
+    margin-left: auto;
   }
 }
 
