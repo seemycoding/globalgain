@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financial Health Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/finstyle.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <div class="bg-grid"></div>
+
+    <main class="app-shell">
+      <header class="hero">
+        <div class="brand-wrap">
+          <img src="logo-global-gain.svg" alt="Global Gain Logo" class="brand-logo" />
+          <div>
+            <p class="kicker">GLOBAL GAIN</p>
+            <h1>Financial Health Assessment & Report</h1>
+          </div>
+        </div>
+        <p>
+          Fill base profile + checklist inputs. The engine calculates targets,
+          scores every checkpoint, and generates an actionable financial report.
+        </p>
+      </header>
+
+      <section class="card form-card">
+        <h2>Client Profile</h2>
+        <div class="form-grid">
+          <label>
+            Financial Doctor Name
+            <input
+              type="text"
+              id="plannerName"
+              value="Rupesh Kumar"
+              readonly
+              aria-readonly="true"
+            />
+          </label>
+          <label>
+            Client Name
+            <input type="text" id="clientName" placeholder="Enter client name" />
+          </label>
+          <label>
+            Email ID
+            <input type="email" id="email" placeholder="name@example.com" />
+          </label>
+
+          <label>
+            Mobile Number
+            <input type="text" id="mobile" placeholder="e.g. 9876543210" />
+          </label>
+          <label>
+            Date of Birth
+            <input type="date" id="dob" />
+          </label>
+          <label>
+            Age
+            <input type="number" id="age" value="0" readonly aria-readonly="true" />
+          </label>
+          <label>
+            Assessment Date
+            <input type="date" id="assessmentDate" />
+          </label>
+
+          <label>
+            Family Members
+            <input type="number" id="familyMembers" placeholder="e.g. 4" min="1" />
+          </label>
+          <label>
+            Annual Income (Rs)
+            <input type="number" id="annualIncome" placeholder="e.g. 1200000" min="0" />
+          </label>
+          <label>
+            Monthly Expenses (Rs)
+            <input type="number" id="monthlyExpenses" placeholder="e.g. 50000" min="0" />
+          </label>
+
+          <label>
+            Child Education Goal (Rs)
+            <input type="number" id="childGoal" placeholder="e.g. 2500000" min="0" />
+          </label>
+          <label>
+            Marriage Fund Goal (Rs)
+            <input type="number" id="marriageGoal" placeholder="e.g. 1000000" min="0" />
+          </label>
+          <label>
+            Wealth Target (Rs)
+            <input type="number" id="wealthTarget" placeholder="e.g. 10000000" min="0" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Financial Checklist & Scores</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Checklist Item</th>
+                <th>Formula / Rule</th>
+                <th>Target</th>
+                <th>Current Status / Input</th>
+                <th>Gap</th>
+                <th>Score (1-5)</th>
+              </tr>
+            </thead>
+            <tbody id="checklistBody"></tbody>
+          </table>
+        </div>
+        <div class="actions">
+          <button id="calculateBtn" class="primary-btn">
+            Generate Financial Health Report
+          </button>
+        </div>
+      </section>
+
+      <section id="reportSection" class="card report hidden">
+        <div class="report-top">
+          <div>
+            <p class="report-name" id="reportClientName">-</p>
+            <p class="muted" id="reportPlanner">Planner: -</p>
+            <p class="muted" id="reportDate">Date: -</p>
+          </div>
+          <div class="score-ring">
+            <div id="overallPercent">0%</div>
+            <small id="overallGrade">-</small>
+          </div>
+        </div>
+
+        <div class="report-grid">
+          <article class="insight-panel">
+            <h3>Key Insights</h3>
+            <ul id="insightsList"></ul>
+          </article>
+          <article class="insight-panel">
+            <h3>Recommendations</h3>
+            <ul id="recommendationsList"></ul>
+          </article>
+        </div>
+
+        <h3>Category Performance</h3>
+        <div id="categoryCards" class="category-grid"></div>
+
+        <h3>Financial Charts</h3>
+        <div class="chart-grid">
+          <article class="chart-card">
+            <h4>Category Radar</h4>
+            <canvas id="radarChart" width="420" height="300"></canvas>
+          </article>
+          <article class="chart-card">
+            <h4>Checklist Scores</h4>
+            <canvas id="scoreBarChart" width="420" height="300"></canvas>
+          </article>
+          <article class="chart-card chart-wide">
+            <h4>Top Gap Analysis</h4>
+            <canvas id="gapChart" width="880" height="260"></canvas>
+          </article>
+        </div>
+        <div id="chartTooltip" class="chart-tooltip hidden"></div>
+
+        <h3>Detailed Checklist Analysis</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Target</th>
+                <th>Current</th>
+                <th>Gap</th>
+                <th>Score</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="analysisBody"></tbody>
+          </table>
+        </div>
+        <div class="report-actions">
+          <button id="downloadPdfBtn" class="primary-btn" type="button">Download PDF</button>
+        </div>
+        <p class="disclaimer">
+          Disclaimer : This report is based on client-provided information and is for planning
+          purposes only. It does not constitute investment, legal, or tax advice. Recommendations
+          are subject to market and regulatory risks. Global Gain shall not be liable for decisions
+          taken based on this report.
+        </p>
+      </section>
+    </main>
+
+    <div id="investmentModal" class="modal hidden">
+      <div class="modal-card">
+        <div class="modal-head">
+          <h3>Manage Investments</h3>
+          <button id="closeInvestmentModal" class="close-btn" type="button">x</button>
+        </div>
+        <div class="modal-grid">
+          <section>
+            <h4 class="risk-title">Risky Investments</h4>
+            <div id="riskyList" class="choice-list"></div>
+          </section>
+          <section>
+            <h4 class="safe-title">Safe Investments</h4>
+            <div id="safeList" class="choice-list"></div>
+          </section>
+        </div>
+        <div class="allocation-box">
+          <p id="riskPctText">Risk Allocation: 0%</p>
+          <div class="bar"><span id="riskBar"></span></div>
+          <p id="safePctText">Safe Allocation: 0%</p>
+          <div class="bar"><span id="safeBar"></span></div>
+          <small id="targetMixText">Target (based on age): Balanced (Risk: 70%, Safe: 30%)</small>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
